@@ -1,0 +1,392 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: #EEF0F4;
+    text-align: center;
+}
+
+/* Navbar Styles */
+#navbar {
+    display: flex;
+    justify-content: space-between;  /* Spread out Home and menu links */
+    align-items: center;
+    padding: 10px 30px;
+    background-color: black;
+    color: white;
+    position: sticky;
+    top: 0;
+    bottom: 5;
+    width: 91%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(175, 28, 28, 0.1);
+    border-radius: 5%;
+}
+
+#navbar #home-link {
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#navbar #menu-links {
+    display: flex;
+    gap: 10px; /* Reduced space between links */
+}
+
+#navbar #menu-links span {
+    cursor: pointer;
+    font-size: 14px; /* Smaller font size */
+    margin: 0 5px;  /* Removed excess margins */
+}
+
+#navbar span:hover {
+    text-decoration: underline;
+}
+
+/* Page Containers */
+.container {
+    padding: 20px;
+}
+
+/* Profile button in the top-right corner */
+#profile-button {
+    position: fixed;
+    top: 21.5px;
+    border-radius: 10%;
+    right: 10px;
+    padding: 10px 15px;
+    background-color:black;
+    color: white;
+    
+    cursor: pointer;
+    z-index: 10;
+}
+
+#profile-button:hover {
+    background-color: #555;
+    border-radius: 10%;
+}
+
+#home-container, #profile-container {
+    padding: 20px;
+    border-radius: 10%;
+}
+
+#profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    
+}
+
+/* Scrollable Trending Section */
+.scroll-section {
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.scroll-section h2 {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.scrollable-images {
+    display: flex;
+    gap: 50px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.scrollable-images img {
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.scrollable-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Product Sections (Women, Men, Shoes) */
+.product-section {
+    margin: 30px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-section h2 {
+    font-size: 20px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.product {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img {
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.product button {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #555;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+#main-content {
+    display: none;
+}
+
+#signup-container {
+
+    flex-direction: column; /* Arrange items in columns */
+    justify-content: center;
+    align-items: center; /* Horizontally center the content */
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto 0;
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+.login-container {
+    flex-direction: column; /* Arrange items in columns */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto 0;
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    
+}
+
+/* Login Container Styles */
+#login-container {
+    display: flex;
+    flex-direction: column; /* Arrange items in columns */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    padding: 10px;
+    max-width: 400px;
+    margin: 50px auto 0; /* Add margin-top to push the container down */
+    
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+
+/* Heading Styles (optional) */
+#login-container h1, #signup-container h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+/* Login and Signup Styles */
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: black;
+}
+
+/* Home Page Styles */
+#home-container h1 {
+    font-size: 22px;
+}
+
+#success-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #4CAF50;  /* Green color for success message */
+}
+
+/* Profile Page Styles */
+#profile-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+#profile-container textarea,
+#profile-container input,
+#profile-container select {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#profile-container button {
+    margin-top: 15px;
+}
+
+/* Scroll Section Styling */
+.scroll-section {
+    margin: 20px;
+    position: relative;
+    overflow: hidden; /* Hide items beyond the container */
+}
+
+.scroll-section h2 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* Scroll Container */
+.scroll-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Product Items */
+.product {
+    flex: 0 0 calc(20% - 10px); /* Show 5 items with spacing */
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Scroll Buttons */
+.scroll-left, .scroll-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.scroll-left {
+    left: 10px;
+}
+
+.scroll-right {
+    right: 10px;
+}
+
+.scroll-left:hover, .scroll-right:hover {
+    background: #555;
+}
+/* Success message */
+#success-message {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #4CAF50;  /* Green color for success message */
+    display: none; /* Initially hidden */
+}
+
+#success-message.hidden {
+    display: none;
+}
+
+/* Cart Section */
+#cart-container {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#cart-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#merchant-products-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#merchant-products-list li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
