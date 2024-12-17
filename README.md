@@ -14,6 +14,12 @@ Backend: Firebase (Authentication & Database)
 Installation
 To run this project locally, follow these steps:
 
+![project -1](https://github.com/user-attachments/assets/674110b9-e6e3-4d2b-bc91-41405148b3ff)
+
+![project -3](https://github.com/user-attachments/assets/99a7196b-3d5c-4cf5-b32c-3b044044a336)
+![project -2](https://github.com/user-attachments/assets/f8fe0d7f-b9c1-4723-992c-407263455de1)
+
+
 
 How to Use
 Sign Up: New users can create an account using the sign-up form. All user data is stored in Firebase.
