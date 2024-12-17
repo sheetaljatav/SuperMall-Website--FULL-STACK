@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Login Page -->
+    <div id="login-container" class="container">
+        <h1>Login</h1>
+        <input type="email" id="login-email" placeholder="Enter your email">
+        <input type="password" id="login-password" placeholder="Enter your password">
+        <button id="login-button">Login</button>
+        <p>Don't have an account? <a href="#" id="go-to-signup">Sign Up</a></p>
+    </div>
+
+    <!-- Sign Up Page -->
+    <div id="signup-container" class="container" style="display: none;">
+        <h1>Sign Up</h1>
+        <input type="text" id="signup-first-name" placeholder="First Name"/>
+        <input type="text" id="signup-last-name" placeholder="Last Name"/>
+        <input type="email" id="signup-email" placeholder="Email"/>
+        <input type="password" id="signup-password" placeholder="Password"/>
+        <button id="signup-button">Sign Up</button>
+        <p>Already have an account? <a href="#" id="go-to-login">Login</a></p>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-container" class="container" style="display: none;">
+        <!-- Navbar -->
+        <div id="navbar">
+            <span id="home-link">Home</span>
+            <div id="menu-links">
+                <span id="search-link">Search</span>
+                <span id="cart-link">Cart</span>
+            </div>
+        </div>
+        
+        <button id="profile-button">Profile</button>
+    </div>
+    
+    <!-- Search Page -->
+    <div id="search-container" class="container" style="display: none;">
+        <h1>Search</h1>
+        <input type="text" id="search-input" placeholder="Search anything..." />
+        <button id="search-button">Search</button>
+        <div id="search-results"></div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile-container" class="container" style="display: none;">
+        <h1>Profile Page</h1>
+        <label for="profile-bio">Bio:</label>
+        <textarea id="profile-bio" placeholder="Enter your bio here..."></textarea>
+        <label for="profile-address">Address:</label>
+        <textarea id="profile-address" placeholder="Enter your address here..."></textarea>
+        <label for="photo">Choose a Photo:</label>
+        <input type="file" id="photo" accept="image/*">
+        <label for="user-type">Select User Type:</label>
+        <select id="user-type">
+            <option value="" disabled selected>Choose Option</option>
+            <option value="merchant">Merchant</option>
+            <option value="consumer">Consumer</option>
+        </select>
+        <button id="save-profile">Save</button>
+        <button id="back-to-home">Back to Home</button>
+        <button id="logout-button">Logout</button>
+    </div>
+
+    <!-- Cart Page -->
+    <div id="cart-container" class="container" style="display: none;">
+        <h1>Your Cart</h1>
+        <ul id="cart-list">
+            <!-- Cart items will appear here -->
+        </ul>
+        <p id="cart-message">Your cart is empty.</p>
+        <button id="back-to-home-from-cart">Back to Home</button>
+    </div>
+
+    <!-- Success Message -->
+    <div id="success-message" class="hidden">
+        <!-- Success message will be shown here -->
+    </div>
+
+    <!-- Product Sections -->
+    <div id="trending-section" class="product-section hidden">
+        <h2>Trending</h2>
+        <div class="scroll-container">
+            <img src="image1.jpg" alt="Trending 1" class="trending-image">
+            <img src="image2.jpg" alt="Trending 2" class="trending-image">
+            <img src="image3.jpg" alt="Trending 3" class="trending-image">
+            <button class="scroll-left">←</button>
+            <button class="scroll-right">→</button>
+        </div>
+    </div>
+
+    <div id="women-section" class="product-section hidden">
+        <h2>Women</h2>
+        <div class="product-grid">
+            <!-- Example Products -->
+            <div class="product">
+                <img src="path/to/women1.jpg" alt="Women's Item 1">
+                <p>Price: $50</p>
+                <button class="add-to-cart-button" data-product-name="Women's Item 1">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </div>
+
+    <div id="men-section" class="product-section hidden">
+        <h2>Men</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="path/to/men1.jpg" alt="Men's Item 1">
+                <p>Price: $40</p>
+                <button class="add-to-cart-button" data-product-name="Men's Item 1">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </div>
+
+    <div id="shoes-section" class="product-section hidden">
+        <h2>Shoes</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="path/to/shoes1.jpg" alt="Shoes Item 1">
+                <p>Price: $70</p>
+                <button class="add-to-cart-button" data-product-name="Shoes Item 1">Add to Cart</button>
+            </div>
+            <!-- Add more products as needed -->
+        </div>
+    </div>
+
+   
+    <script type="module" src="index.js"></script>
+    <script>
+        // JavaScript for Cart Functionality
+
+        // Add to Cart Functionality
+        const cartList = document.getElementById("cart-list");
+        const successMessage = document.getElementById("success-message");
+        const cartMessage = document.getElementById("cart-message");
+
+        function addToCart(productName) {
+            // Add product to cart list
+            const cartItem = document.createElement("li");
+            cartItem.textContent = productName;
+            cartList.appendChild(cartItem); 
+
+            // Display success message
+            successMessage.textContent = `${productName} has been added to the cart.`;
+            successMessage.style.display = "block"; // Show success message
+            setTimeout(() => {
+                successMessage.style.display = "none"; // Hide the success message after 3 seconds
+            }, 3000);
+
+            // Update cart message visibility
+            if (cartList.children.length > 0) {
+                cartMessage.style.display = "none"; // Hide empty cart message
+            }
+        }
+
+        // Add event listeners to "Add to Cart" buttons
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+        addToCartButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const productName = button.getAttribute("data-product-name");
+                addToCart(productName);
+            });
+        });
+    </script>
+</body>
+</html>
